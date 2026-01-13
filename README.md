@@ -1,1 +1,5 @@
-# css-framework-module-1-2
+## Available Scripts
+## Technologies used
+## .env
+## Author
+Tomatsuppe11211
