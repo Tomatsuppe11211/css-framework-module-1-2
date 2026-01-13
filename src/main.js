@@ -73,9 +73,23 @@ function spinner(){
 
 contactForm.addEventListener('submit', function(e){
     e.preventDefault()
+    
+    //Adding modal
     const toastElement = document.getElementById('modal')
     const toast = new bootstrap.Toast(toastElement)
     toast.show()
+
     spinner()
     setTimeout(sendMessage, 5000);
 })
+
+
+
+
+
+
+
+
+//adding tooltip
+const tooltipTriggerList = document.querySelectorAll('[data-bs-toggle="tooltip"]')
+const tooltipList = [...tooltipTriggerList].map(tooltipTriggerEl => new bootstrap.Tooltip(tooltipTriggerEl))
