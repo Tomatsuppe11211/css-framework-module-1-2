@@ -98,8 +98,31 @@
             ></textarea>
         </div>
 
-
         <button type="submit" id="contactButton" class="btn btn-primary">Send Message</button>
     </form>
+    
+    <!--toast notification /modal window-->
+    <div class="position-fixed bottom-0 end-0 p-3 z-3">
+        <div 
+            id="modal"
+            class="toast"
+            role="alert"
+            aria-live="assertive"
+            aria-atomic="true"
+        >
+            <div class="toast-header">
+                <i class="bi bi-info-circle me-2"></i>
+                <strong class="me-auto">Sending message</strong>
+                <small>Just now</small>
+                <button
+                    type="button"
+                    class="btn-close"
+                    data-bs-dismiss="toast"
+                    aria-label="close"
+                ></button>
+            </div>
+            <div class="toast-body bg-light text-dark">Sending message to website.com</div>
+        </div>
+    </div>
 </body>
 </html>

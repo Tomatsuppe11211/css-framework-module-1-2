@@ -36,12 +36,13 @@ loginform.addEventListener('submit', function(e){
 
 
 
-//Getting HTML-elements for contact
+//Getting HTML-elements for contact + toast/modal
 const contactForm = document.getElementById('contactForm')
 const contactMessage = document.getElementById('contactMessage')
 const contactButton = document.getElementById('contactButton')
 const contactEmail = document.getElementById('emailGroup')
 const contactTextarea = document.getElementById('messageContainer')
+
 
 function sendMessage(){
     contactMessage.className = 'alert alert-success d-flex w-50'
@@ -72,6 +73,9 @@ function spinner(){
 
 contactForm.addEventListener('submit', function(e){
     e.preventDefault()
+    const toastElement = document.getElementById('modal')
+    const toast = new bootstrap.Toast(toastElement)
+    toast.show()
     spinner()
     setTimeout(sendMessage, 5000);
 })
