@@ -27,7 +27,7 @@
         <h1 class="fs-3 mb-3">Login</h1>
         
         <!--Error message-->
-        <div class="alert alert-danger d-none" id="message" role="alert">
+        <div class="alert alert-danger d-none" id="loginMessage" role="alert">
             There was an error with the server
         </div>
 
@@ -64,5 +64,37 @@
             </div>
         </div>
     </section>
+
+    <form id="contactForm" class="container p-5 border border-black border-1 mt-5 bg-info text-white rounded d-flex flex-column align-items-center w-50">
+        <h1 class="fs-3">Contact us</h1>
+
+        <div class="d-none" id="contactMessage" role="alert"></div>
+
+        <div class="mb-3 w-50">
+            <label class="form-label" for="emailGroup">Email</label>
+            <div class="input-group">
+                <span class="input-group-text" id="at">@</span>
+                <input 
+                    type="text" 
+                    class="form-control"
+                    id="emailGroup"
+                    aria-label="email"
+                    aria-describedby="at"
+                    placeholder="Email"
+                >
+            </div>
+        </div>
+        <div class="mb-3 w-50">
+            <label class="form-label" for="messageContainer">Message</label>
+            <textarea class="form-control" id="messageContainer"></textarea>
+        </div>
+
+
+        <button 
+            type="submit" 
+            id="contactButton"
+            class="btn btn-primary"
+            >Send Message</button>
+    </form>
 </body>
 </html>
