@@ -19,6 +19,7 @@
         defer
     ></script>
 
+    <link rel="stylesheet" href="css/style.css">
     <script src="src/main.js" defer></script>
 </head>
     
@@ -65,10 +66,10 @@
         </div>
     </section>
 
-    <form id="contactForm" class="container p-5 border border-black border-1 mt-5 bg-info text-white rounded d-flex flex-column align-items-center w-50">
-        <h1 class="fs-3">Contact us</h1>
-
+    <form id="contactForm" class="container p-5 border border-black border-1 mt-5 bg-info text-white rounded d-flex flex-column align-items-center w-50 mb-3">
         <div class="d-none" id="contactMessage" role="alert"></div>
+        
+        <h1 class="fs-3">Contact us</h1>
 
         <div class="mb-3 w-50">
             <label class="form-label" for="emailGroup">Email</label>
@@ -81,20 +82,24 @@
                     aria-label="email"
                     aria-describedby="at"
                     placeholder="Email"
+                    required
                 >
             </div>
         </div>
         <div class="mb-3 w-50">
             <label class="form-label" for="messageContainer">Message</label>
-            <textarea class="form-control" id="messageContainer"></textarea>
+            <textarea 
+            class="form-control" 
+            id="messageContainer" 
+            placeholder="Enter message"
+            oninput="autoAdjust(this)"
+            maxlength="200"
+            required
+            ></textarea>
         </div>
 
 
-        <button 
-            type="submit" 
-            id="contactButton"
-            class="btn btn-primary"
-            >Send Message</button>
+        <button type="submit" id="contactButton" class="btn btn-primary">Send Message</button>
     </form>
 </body>
 </html>

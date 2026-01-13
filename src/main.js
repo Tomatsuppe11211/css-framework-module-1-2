@@ -40,15 +40,38 @@ loginform.addEventListener('submit', function(e){
 const contactForm = document.getElementById('contactForm')
 const contactMessage = document.getElementById('contactMessage')
 const contactButton = document.getElementById('contactButton')
-
+const contactEmail = document.getElementById('emailGroup')
+const contactTextarea = document.getElementById('messageContainer')
 
 function sendMessage(){
     contactMessage.className = 'alert alert-success d-flex w-50'
-    contactMessage.innerHTML = 'Message sent'
+    contactMessage.innerHTML = 'Message sent successfully'
+    contactButton.innerHTML = 'Send Message'
+    contactEmail.value = ''
+    contactTextarea.value = ''
+    setTimeout(function(){
+        contactMessage.className = 'd-none'
+    }, 3000);
 }
 
 
+function autoAdjust (e){
+    e.style.height = 'inherit'
+    e.style.height = (e.scrollHeight) + 'px'
+}
+
+
+function spinner(){
+    contactButton.innerHTML = '<i class="bi bi-hourglass" id="spinningIcon"></i>'
+    const icon = document.getElementById('spinningIcon')
+    if(icon) {
+        icon.style.display = 'inline-block'
+        icon.style.animation = 'spinner infinite 1s linear'
+    }
+}
+
 contactForm.addEventListener('submit', function(e){
     e.preventDefault()
-    sendMessage()
+    spinner()
+    setTimeout(sendMessage, 5000);
 })
