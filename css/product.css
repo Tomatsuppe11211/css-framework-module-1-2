@@ -1,0 +1,12 @@
+h1 {
+    font-size: clamp(1.5rem, 4vw, 3rem);
+}
+
+p, select {
+    font-size: clamp(14px, 2vw, 20px);
+}
+
+img{
+    max-width: 75%;
+    max-height: 400px;
+}
